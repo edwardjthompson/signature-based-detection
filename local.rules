@@ -1,4 +1,4 @@
-#alert http any any <> any any (msg:"POLICY HTTP Portable network graphics downloaded"; sid:1; rev:1;)
+alert http any any <> any any (msg:"POLICY HTTP Portable network graphics downloaded"; file_data; content:"|89 50 4E 47 0D 0A 1A 0A|"; sid:1; rev:1;)
 
 #alert http any any <> any any (msg:"POLICY HTTP Base64 encodung detected"; sid:2; rev:1;)
 

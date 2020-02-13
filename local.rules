@@ -1,3 +1,7 @@
-alert ip any any <> any any (msg:"BAD IP REPUTATION: Low Confidence Alert"; iprep:any,Host,<,50; sid:1; rev:1;)
+alert http any any <> any any (msg:"POLICY HTTP Portable network graphics downloaded"; sid:1; rev:1;)
 
-alert ip any any <> any any (msg:"BAD IP REPUTATION: High Confidence Alert"; iprep:any,Host,>,50; sid:2; rev:1;)
+alert http any any <> any any (msg:"POLICY HTTP Base64 encodung detected"; sid:2; rev:1;)
+
+alert tcp any any <> any any (msg:"SCAN nmap -sS"; sid:3; rev:1;)
+
+alert ip any any <> any any (msg:"POLICY DNS Domain name request with entropy > 3 and at least 85% of max entropy"; sid:4; rev:1;)

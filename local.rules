@@ -2,6 +2,6 @@ alert http any any <> any any (msg:"POLICY HTTP Portable network graphics downlo
 
 #alert http any any <> any any (msg:"POLICY HTTP Base64 encodung detected"; sid:2; rev:1;)
 
-#alert tcp any any <> any any (msg:"SCAN nmap -sS"; sid:3; rev:1;)
+alert tcp any any <> any [:1024] (msg:"SCAN nmap -sS"; threshhold:type threshhold, track by_src, count 200, seconds 60, sid:3; rev:1;)
 
 #alert ip any any <> any any (msg:"POLICY DNS Domain name request with entropy > 3 and at least 85% of max entropy"; sid:4; rev:1;)

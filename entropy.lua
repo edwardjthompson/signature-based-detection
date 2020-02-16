@@ -5,19 +5,17 @@ function init (args)
 end
 
 function match(args)
-    a = tostring(args)
-    print(a)
-    --[[
-    if #a > 0 then
-        if a:find("^POST%s+/.*%.php%s+HTTP/1.0$") then
-            return 1
+    dns_query = DnsGetQueries();
+    if dns_query ~= nil then
+        for n, t in pairs(dns_query) do
+            rrname = t["rrname"]
+            rrtype = t["type"]
+
+            print ("QUERY: " .. ts .. " " .. rrname .. " [**] " .. rrtype .. " [**] " ..
+                   "TODO" .. " [**] " .. srcip .. ":" .. sp .. " -> " ..
+                   dstip .. ":" .. dp)
         end
     end
-    --]]
-
-    return 0
+    return 1    
 end
-
-return 0
-
 

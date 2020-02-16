@@ -1,8 +1,8 @@
--- function init (args)
---     local needs = {}
---     needs["packet"] = tostring(true)
---     return needs
--- end
+function init (args)
+    local needs = {}
+    needs["type"] = "DNS"
+    return needs
+end
 
 function match(args)
     dns_query = DnsGetQueries();

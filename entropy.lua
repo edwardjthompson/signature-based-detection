@@ -1,6 +1,6 @@
 function init (args)
     local needs = {}
-    needs["protocol"] = "dns"
+    needs["packet"]
     return needs
 end
 
@@ -19,3 +19,5 @@ function match(args)
 end
 
 return 0
+
+

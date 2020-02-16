@@ -1,6 +1,6 @@
 function init (args)
     local needs = {}
-    needs["packet"]
+    needs["packet"] = tostring(true)
     return needs
 end
 

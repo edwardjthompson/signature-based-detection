@@ -5,20 +5,16 @@ function init (args)
 end
 
 function match(args)
-    dns_query = DnsGetQueries();
+    -- print(args)
     print("loop")
-    print(tostring(dns_query))
-    print(args)
-    if dns_query ~= nil then
-        for n, t in pairs(dns_query) do
-            rrname = t["rrname"]
-            rrtype = t["type"]
-
-            print ("QUERY: " .. ts .. " " .. rrname .. " [**] " .. rrtype .. " [**] " ..
-                   "TODO" .. " [**] " .. srcip .. ":" .. sp .. " -> " ..
-                   dstip .. ":" .. dp)
-        end
-    end
-    return 1    
+    dns_query = DnsGetQueries();
+    print(dns_query)
+    dns_answers = DnsGetAnswers();
+    print(dns_answers)
+    dns_auth = DnsGetAuthorities();
+    print(dns_answers)
+    rcode = DnsGetRcode();
+    print(rcode)
+    return 1  
 end
 

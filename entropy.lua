@@ -1,6 +1,6 @@
 function init (args)
     local needs = {}
-    needs["type"] = "DNS"
+    needs["protocol"] = "DNS"
     return needs
 end
 

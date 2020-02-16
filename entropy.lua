@@ -1,6 +1,6 @@
 function init (args)
     local needs = {}
-    needs["buffer"] = tostring(true)
+    needs["type"] = "packet" --tostring(true)
     return needs
 end
 

@@ -1,6 +1,6 @@
 alert http any any <> any any (msg:"POLICY HTTP Portable network graphics downloaded"; file_data; content:"|89 50 4E 47 0D 0A 1A 0A|"; sid:1; rev:1;)
 
-#alert http any any <> any any (msg:"POLICY HTTP Base64 encoding detected"; file_data; pcre:"/[a-zA-Z0-9]/"; sid:2; rev:1;)
+alert http any any <> any any (msg:"POLICY HTTP Base64 encoding detected"; file_data; pcre:"/([a-zA-Z0-9+\/]{4})*/"; sid:2; rev:1;)
 
 #alert http any any <> any any (msg:"POLICY HTTP Base64 encoding detected"; file_data; pcre:"/^(?:[a-zA-Z0-9+\/]{4})*(?:|(?:[a-zA-Z0-9+\/]{3}=)|(?:[a-zA-Z0-9+\/]{2}==)|(?:[a-zA-Z0-9+\/]{1}===))$/“; sid:2; rev:1;)
 
